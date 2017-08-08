@@ -16,7 +16,7 @@ module.exports = class extends Generator {
             if (add) {
                 rows.push({
                     type: 'Row',
-                    children: []
+                    content: []
                 })
 
                 this._addColumn()
@@ -38,7 +38,7 @@ module.exports = class extends Generator {
         ]).then(answer => {
             const { size } = answer
 
-            rows[rows.length - 1].children.push({
+            rows[rows.length - 1].content.push({
                 type: 'Column',
                 size: size
             })
@@ -72,9 +72,9 @@ module.exports = class extends Generator {
                 : ','
             console.log(`    {`)
             console.log(`        type: '${row.type}',`)
-            console.log(`        children: [`)
-            row.children.forEach((col, j) => {
-                const jcomma = j === row.children.length - 1
+            console.log(`        content: [`)
+            row.content.forEach((col, j) => {
+                const jcomma = j === row.content.length - 1
                     ? ''
                     : ','
                 console.log(`            {`)
