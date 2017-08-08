@@ -81,7 +81,7 @@ module.exports = class extends Generator {
                 console.log(`                type: '${col.type}',`)
                 console.log(`                props: {`)
                 console.log(`                    size: ${col.size}`)
-                console.log(`                       }`)
+                console.log(`                }`)
                 console.log(`            }${jcomma}`)
             })
             console.log(`        ]`)
